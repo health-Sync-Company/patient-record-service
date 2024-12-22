@@ -55,7 +55,7 @@ jobs:
         env:
           ACTIONS_ALLOW_UNSECURE_COMMANDS: true
         with:
-          service_account_key: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY_JSON_JSON }}
+          service_account_key: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY_JSON }}
           project_id: ${{ secrets.GCP_PROJECT_ID_VALUE }}
 
       # Step 7: Configure Docker for GKE
