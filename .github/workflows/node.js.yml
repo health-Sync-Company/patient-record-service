@@ -71,7 +71,12 @@ jobs:
       - name: Get Cluster Credentials
         run: gcloud container clusters get-credentials "${{ env.K8S_CLUSTER_NAME }}" --zone "${{ env.K8S_CLUSTER_ZONE }}" --project "${{ secrets.GCP_PROJECT_ID_VALUE }}"
 
-      # Step 10: Deploy to GKE
+      # Step 10: Setup to Gcloud Component
+      - name: Install Gcloud Component
+        run: |-
+          gcloud components install gke-gcloud-auth-plugin
+
+      # Step 11: Deploy to GKE
       - name: Deploy to GKE
         run: |
           kubectl apply -f ${{ env.K8S_SERVICE_FILE }} -n "${{ env.K8S_NAMESPACE }}"
@@ -79,7 +84,7 @@ jobs:
           kubectl rollout restart deployment "${{ env.APPLICATION_NAME }}" -n "${{ env.K8S_NAMESPACE }}"
           kubectl get services -o wide -n "${{ env.K8S_NAMESPACE }}"
 
-      # Step 11: Deployment Health Check
+      # Step 12: Deployment Health Check
 #      - name: Deployment Integration Tests
 #        run: |
 #          echo "Running Service Health Check Test..."
