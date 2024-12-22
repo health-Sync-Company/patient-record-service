@@ -11,7 +11,7 @@ env:
   GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID_VALUE }}
   K8S_CLUSTER_NAME: health-sync
   K8S_CLUSTER_ZONE: us-central1
-  K8S_NAMESPACE: health-tech
+  K8S_NAMESPACE: health-sync
   APPLICATION_NAME: patient-record-service
   DOCKER_IMAGE_TAG: prod
   K8S_DEPLOYMENT_FILE: deployment.yaml
