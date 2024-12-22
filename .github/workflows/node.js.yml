@@ -69,7 +69,7 @@ jobs:
 
       # Step 9: Get GKE Cluster Credentials
       - name: Get Cluster Credentials
-        run: gcloud container clusters get-credentials "${{ env.K8S_CLUSTER_NAME }}" --zone "${{ env.K8S_CLUSTER_ZONE }}" --project "${{ secrets.GCP_PROJECT_ID }}"
+        run: gcloud container clusters get-credentials "${{ env.K8S_CLUSTER_NAME }}" --zone "${{ env.K8S_CLUSTER_ZONE }}" --project "${{ secrets.GCP_PROJECT_ID_VALUE }}"
 
       # Step 10: Deploy to GKE
       - name: Deploy to GKE
