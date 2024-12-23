@@ -39,7 +39,7 @@ jspm_packages/
 .npm/
 
 # dotenv environment variables file
-.env
+#.env
 .env.test
 
 # Next.js build output
