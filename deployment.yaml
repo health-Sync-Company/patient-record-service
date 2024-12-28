@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: patient-record-service
-          image: gcr.io/YOUR_PROJECT_ID/patient-record-service:blue
+          image: gcr.io/infra-odyssey-445416-h1/patient-record-service:prod
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
@@ -57,7 +57,7 @@ spec:
     spec:
       containers:
         - name: patient-record-service
-          image: gcr.io/YOUR_PROJECT_ID/patient-record-service:green
+          image: gcr.io/infra-odyssey-445416-h1/patient-record-service:prod
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
